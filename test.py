@@ -1,20 +1,25 @@
-AWS_ACCESS_KEY_ID="AKIAJ6HTRGFBIGI5ETT4"
-SECRET="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"
+#!/usr/local/bin/python
 
-from datetime import datetime
+# change above line to point to local 
+# python executable
 
-now = datetime.now()
+import urllib, urlparse, string, time
+ 
 
-mm = str(now.month)
+# create URL with desired search parameters
 
-dd = str(now.day)
+url = "http://archive.stsci.edu/pointings/search.php?"
+url = url + "primary=ACS&outputformat=CSV"
+url = url + "&pnt_ucountp=%3C5&pnt_icountp=%3E1&bao=and"
+url = url + "&galactic=Above&galsearch=75"
+url = url + "&action=Search+Exposures"
 
-yyyy = str(now.year)
+print url
 
-hour = str(now.hour)
+# retrieve URL and  write results to filename
 
-mi = str(now.minute)
+filename = "out_py.txt"
 
-ss = str(now.second)
+urllib.urlretrieve(url,filename)
 
-print mm + "/" + dd + "/" + yyyy + " " + hour + ":" + mi + ":" + ss
+### Done!
