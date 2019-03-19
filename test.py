@@ -19,5 +19,5 @@ ss = str(now.second)
 
 print mm + "/" + dd + "/" + yyyy + " " + hour + ":" + mi + ":" + ss
 
-username = trendphil\dont_hack_me_please
+username = trendphil\\dont_hack_me_please
 password = d0nTh4cKmeE
